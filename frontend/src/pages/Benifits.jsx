@@ -1,9 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { StarOutlined } from "@ant-design/icons";
-import Pagination from "../components/Pagination";
+import SliderComponent from "../components/SliderComponent";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { data } from "../components/data";
 
 const Benifits = () => {
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div id="benifits" className="min-h-screen w-screen">
       <div className="flex flex-col justify-center items-center h-auto w-full">
@@ -20,7 +32,6 @@ const Benifits = () => {
           partner for progress and motivation
         </p>
       </div>
-
       <div className="main flex gap-2 mx-20 my-14">
         <div className="container2 flex flex-col gap-4">
           <div className="w-72 h-52 bg-[#09090A] border border-gray-800 p-4 rounded-xl ">
@@ -102,7 +113,6 @@ const Benifits = () => {
           </div>
         </div>
       </div>
-
       <div className="w-screen h-screen ">
         <div className="w-full h-full flex items-center justify-center gap-2 px-10 py-2 font-mono">
           <div className="w-1/2 h-5/6 mt-5 ml-10 bg-cover bg-center bg-[url('https://framerusercontent.com/images/i6uKTIBELHVGJq1QWiJqLSVgy1Q.png?scale-down-to=1024')]">
@@ -129,7 +139,6 @@ const Benifits = () => {
           </div>
         </div>
       </div>
-
       <div className="w-screen h-8 p-2 bg-red-500 text-white relative overflow-hidden whitespace-nowrap">
         <div className=" text-center text-xs font-bold animate-move">
           Workout Routines ⚪ Progress Tracking ⚪ Fitness Plans ⚪ Workout
@@ -142,9 +151,22 @@ const Benifits = () => {
         </div>
       </div>
 
-      <div className="w-screen h-screen bg-green-500 flex justify-center items-center overflow-hidden">
-        <Pagination />
-      </div>
+      <Slider className="w-[93vw] h-screen ml-8" {...settings}>
+        {data.map((d) => (
+          <SliderComponent
+            key={d.name}
+            name={d.name}
+            age={d.age}
+            duration={d.duration}
+            afterWeight={d.after.weight}
+            beforeWeight={d.before.weight}
+            fatBefore={d.before.bodyFat}
+            fatAfter={d.after.bodyFat}
+            beforeImage={d.before.image}
+            afterImage={d.after.image}
+          />
+        ))}
+      </Slider>
     </div>
   );
 };
