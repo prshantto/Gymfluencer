@@ -1,6 +1,6 @@
 const RunningDiv = () => {
   return (
-    <div className="h-28 w-screen bg-black mt-28">
+    <div className="mt-5 h-28 w-full bg-black">
       <div className="w-screen relative overflow-hidden whitespace-nowrap">
         <div className=" text-white/70 text-center text-5xl font-bold animate-move">
           Motivation / Progress / Fitness / Transformation / Motivation /

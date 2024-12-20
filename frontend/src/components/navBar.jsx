@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
 const NavBar = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className=" h-full w-full flex items-center justify-center">
