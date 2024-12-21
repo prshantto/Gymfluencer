@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <>
       <div className=" h-full w-full flex items-center justify-center">
-        <div className="bg-[#121312] h-16 w-9/12 rounded-full border border-gray-700 text-gray-600 text-sm font-bold flex justify-between items-center px-5 py-2 gap-1 fixed z-10 top-6">
+        <div className="bg-[#121312] h-20 w-9/12 rounded-full border border-gray-800 text-gray-500 text-xl font-bold flex justify-between items-center px-5 py-2 gap-1 fixed z-10 top-10">
           <img
             className="h-10 cursor pointer"
             src="https://framerusercontent.com/images/btsz5FjA3AvNFXvmH9iWv1xJd8.svg"
